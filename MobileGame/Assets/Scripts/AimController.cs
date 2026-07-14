@@ -16,7 +16,7 @@ public class AimController : MonoBehaviour
     private void Start()
     {
         // タイトルを経由せずにゲームシーンから直接デバッグ起動した場合などのため、ここでも感度を読み込む
-        GameSettings.MouseSensitivity = PlayerPrefs.GetFloat("MouseSensitivity", 1.0f);
+        GameSettings.MouseSensitivity = PlayerPrefs.GetFloat("MouseSensitivity", 5.0f);
 
         // OS標準のマウスカーソルを非表示にし、画面内にロックする
         Cursor.lockState = CursorLockMode.Locked;

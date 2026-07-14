@@ -12,5 +12,5 @@ public static class GameSettings
     // AudioManagerなどで参照されるSE（効果音）の再生許可フラグ
     public static bool SeEnabled = true;
     // PC向けエイム操作時のマウス感度倍率
-    public static float MouseSensitivity = 1.0f;
+    public static float MouseSensitivity = 5.0f;
 }

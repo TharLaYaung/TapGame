@@ -55,7 +55,7 @@ public class TitleController : MonoBehaviour
         Cursor.visible = true;
 
         // 保存された設定の読み込み
-        // GameSettings.MouseSensitivity = PlayerPrefs.GetFloat("MouseSensitivity", 1.0f);
+        GameSettings.MouseSensitivity = PlayerPrefs.GetFloat("MouseSensitivity", 5.0f);
 
         // UIイベントを処理するため、シーン内にEventSystemが存在しない場合は動的生成
         if (FindObjectOfType<UnityEngine.EventSystems.EventSystem>() == null)
@@ -149,7 +149,7 @@ public class TitleController : MonoBehaviour
         Image logoImage = logoRoot.AddComponent<Image>();
         
         // Resourcesフォルダから画像をロード
-        Texture2D tex = Resources.Load<Texture2D>("pop_pulse_logo");
+        Texture2D tex = Resources.Load<Texture2D>("pop_pulse_logo_transparent");
         if (tex != null)
         {
             // Texture2Dから動的にSpriteを生成してImageにセットする
@@ -529,7 +529,7 @@ public class TitleController : MonoBehaviour
 
         slider.onValueChanged.AddListener((val) => {
             GameSettings.MouseSensitivity = val;
-            // PlayerPrefs.SetFloat("MouseSensitivity", val);
+            PlayerPrefs.SetFloat("MouseSensitivity", val);
             sensText.text = label + ": " + val.ToString("F2");
         });
     }
