@@ -561,6 +561,7 @@ public class UIManager : MonoBehaviour
         slider.onValueChanged.AddListener((val) => {
             GameSettings.MouseSensitivity = val;
             PlayerPrefs.SetFloat("MouseSensitivity", val);
+            PlayerPrefs.Save(); // 確実な保存のためにSave()を追加
             sensText.text = label + ": " + val.ToString("F2");
         });
     }

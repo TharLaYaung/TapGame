@@ -151,6 +151,7 @@ public class AudioManager : MonoBehaviour
         GameSettings.BgmEnabled = isEnabled;
         // PlayerPrefsにBGM設定を保存（有効なら1、無効なら0）
         PlayerPrefs.SetInt("BgmEnabled", isEnabled ? 1 : 0);
+        PlayerPrefs.Save(); // 確実な保存のためにSave()を追加
     }
 
     
@@ -161,6 +162,7 @@ public class AudioManager : MonoBehaviour
         GameSettings.SeEnabled = isEnabled;
         // PlayerPrefsにSE設定を保存（有効なら1、無効なら0）
         PlayerPrefs.SetInt("SeEnabled", isEnabled ? 1 : 0);
+        PlayerPrefs.Save(); // 確実な保存のためにSave()を追加
     }
 
     /// 入力: audioData, channels | 出力: なし | 副作用: audioDataへの波形書き込み

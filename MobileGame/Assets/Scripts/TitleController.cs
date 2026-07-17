@@ -322,6 +322,7 @@ public class TitleController : MonoBehaviour
         // リセット処理をリスナーに登録
         resetButton.onClick.AddListener(() => {
             PlayerPrefs.SetInt("HighScore", 0); // 保存されたスコアを0で上書き
+            PlayerPrefs.Save(); // 確実な保存のためにSave()を追加
             // Debug.Log("High Score Reset!");
             AudioManager.Instance.PlaySE(2); // 特殊なSEを再生
         });
@@ -530,6 +531,7 @@ public class TitleController : MonoBehaviour
         slider.onValueChanged.AddListener((val) => {
             GameSettings.MouseSensitivity = val;
             PlayerPrefs.SetFloat("MouseSensitivity", val);
+            PlayerPrefs.Save(); // 確実な保存のためにSave()を追加
             sensText.text = label + ": " + val.ToString("F2");
         });
     }
